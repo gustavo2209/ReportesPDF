@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>cibertec.edu.pe</title>
+    <link href="~-images/pi-favicon.gif" rel="shortcut icon" type="image/gif" />
+
+    <link href="~/jq/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/jq/bootstrap/bootstrap-icons.min.css" rel="stylesheet" />
+
+    <link href="~/css/main.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- MENU -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light" style="background-color:#def; font-size:1.1em; border-bottom:1px solid #e1e5e8; padding:5px 15px">
+        <a href="../Home/Index" class="navbar-brand" title="Ir a inicio">
+            <img class="d-inline-block align-top" src="~/images/logo.gif" alt=""/>
+            <span style="font-size:x-large; font-weight:bold; padding-left:6px; color:#336699">Cibertec</span>
+        </a>
+
+        <!-- HAMBURGUESA -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#barraDeMenu" aria-controls="barraDeMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- MENUS -->
+        <div class="collapse navbar-collapse" id="barraDeMenu">
+            <ul class="navbar-nav ms-auto">
+                <!-- Categorias -->
+                <li class="nav-item">
+                    <a href="../Home/Categorias" class="nav-link"><i class="bi-archive-fill"></i> Categorias</a>
+                </li>
+
+                <!-- Reportes -->
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="menu_reportes" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi-book-half"></i> Reportes
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="menu_reportes">
+                        <a href="../Home/HolaMundo" class="dropdown-item">
+                            <i class="bi-emoji-heart-eyes-fill" style="color:#0f0"></i> Hola Mundo
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <i class="bi-emoji-sunglasses" style="color:#f00"></i> Listas
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <i class="bi-emoji-wink" style="color:#00f"></i> Imagenes
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <i class="bi-emoji-angry" style="color:#f0f"></i> Tablas
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item disabled">
+                            <i class="bi-patch-check-fill" style="color:#0f0"></i> Deshabilitado
+                        </a>
+                    </div>
+                </li>
+
+                <!-- HOME -->
+                <li class="nav-item">
+                    <a href="../Home/Index" class="nav-link"><i class="bi-house-door"></i> Inicio</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- INSERCION DE FRAGMENTOS DE PAGINA -->
+    <div class="container-fluid">
+        @RenderBody()
+
+    </div>
+
+    <div class="modal fade show" id="dlg_message" style="display:none">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-light">
+                    <h5 class="modal-title" id="dlg_message_title">Mensaje</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div id="dlg_message_msg" class="p-4 text-center"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade show" id="dlg_confirm" style="display:none">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-light">
+                    <h5 class="modal-title" id="dlg_confirm_title"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div id="dlg_confirm_msg" class="p-4 text-center"></div>
+                            <input type="hidden" id="dlg_confirm_dato1" />
+                            <input type="hidden" id="dlg_confirm_dato2" />
+                            <div id="dlg_confirm_error" class="alert alert-danger m-3 p-3 text-center"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" onclick="dlg_confirm_confirm();">Si</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/jq/jquery-3.6.0.min.js"></script>
+    <script src="~/jq/bootstrap/bootstrap.bundle.min.js"></script>
+
+    <script src="~/js/main.js"></script>
+
+</body>
+</html>
